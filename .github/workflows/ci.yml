@@ -1,0 +1,26 @@
+# CI config for flutter.
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  web:
+    name: build & test the Flutter web version
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v2.0.4
+        with:
+          channel: "main"
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
