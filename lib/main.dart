@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyHomePage(title: 'CoWatt Home Page'),
+        '/': (context) => const MyHomePage(title: 'Flutter Test Home Page'),
         '/todos': (context) => TodosWidget(),
         '/map': (context) => Map(),
         '/mapitem': (context) => MapItemView(),
