@@ -46,7 +46,10 @@ class MapItemView extends StatelessWidget {
             const Text('Status:'),
             Text(i.status.name),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                // Todo store stuff ;-)
+                Navigator.pop(context);
+              },
               child: const Text('Submit'),
             ),
           ],

@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 
+import '../gqltest/getCountries/getcountries.req.gql.dart';
+import '../main.dart';
 import '../widgets/map/MapIconEnum.dart';
 import '../widgets/map/MapIconStateEnum.dart';
 
@@ -27,8 +29,9 @@ class MapStateModel extends ChangeNotifier {
     _mapItems.addAll(items);
   }
 
-  void loadMapItemsIdNeeded() {
+  void loadMapItemsIfNeeded() {
     if (_mapItems.isEmpty) {
+      loadCountries();
       int i = 1;
       MapItem mi = MapItem('$i', 51.5, -0.09, "Item $i", MapIconEnum.Private,
           MapIconStateEnum.Available);
@@ -48,6 +51,25 @@ class MapStateModel extends ChangeNotifier {
       _mapItems.add(mi);
     }
     notifyListeners();
+  }
+
+  void loadCountries() {
+    final countriesReq = GgetCountriesReq();
+    graphqlClient.request(countriesReq).listen((resp) {
+      final result = resp.data?.countries;
+      if (result != null && result.isNotEmpty) {
+        double latitude = 51.5;
+        double longitude = -0.09;
+        for (var country in result) {
+          MapItem mi = MapItem(country.name, latitude, longitude, country.name,
+              MapIconEnum.Private, MapIconStateEnum.Occupied);
+          _mapItems.add(mi);
+          latitude = latitude + 0.01;
+          longitude = longitude + 0.01;
+        }
+        notifyListeners();
+      }
+    });
   }
 }
 

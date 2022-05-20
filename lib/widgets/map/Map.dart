@@ -17,7 +17,7 @@ class Map extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(Duration.zero, () {
       // We do this to avoid triggering a refresh notification while building the UI
-      Provider.of<MapStateModel>(context, listen: false).loadMapItemsIdNeeded();
+      Provider.of<MapStateModel>(context, listen: false).loadMapItemsIfNeeded();
     });
 
     return Scaffold(

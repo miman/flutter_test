@@ -4,13 +4,20 @@ import 'package:f_test/models/CounterModel.dart';
 import 'package:f_test/util/HttpOverrides.dart';
 import 'package:f_test/widgets/map/MapItemView.dart';
 import 'package:f_test/widgets/todo/TodosWidget.dart';
+import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'graphql/GraphQlConnection.dart';
 import 'models/MapStateModel.dart';
 import 'models/TodoModel.dart';
 import 'navigation/NavigationDrawer.dart';
 import 'widgets/map/Map.dart';
+
+final graphqlConnection =
+    GraphQlConnection("https://countries.trevorblades.com/graphql");
+
+Client graphqlClient = graphqlConnection.graphqlClient;
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
