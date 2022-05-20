@@ -1,4 +1,4 @@
-query Countries($code: String) {
+query Country($code: ID!) {
   country(code: $code) {
     name
     native

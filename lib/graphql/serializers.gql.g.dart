@@ -8,13 +8,13 @@ part of 'serializers.gql.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GContinentFilterInput.serializer)
-      ..add(GCountriesData.serializer)
-      ..add(GCountriesData_country.serializer)
-      ..add(GCountriesData_country_continent.serializer)
-      ..add(GCountriesData_country_languages.serializer)
-      ..add(GCountriesReq.serializer)
-      ..add(GCountriesVars.serializer)
+      ..add(GCountryData.serializer)
+      ..add(GCountryData_country.serializer)
+      ..add(GCountryData_country_continent.serializer)
+      ..add(GCountryData_country_languages.serializer)
       ..add(GCountryFilterInput.serializer)
+      ..add(GCountryReq.serializer)
+      ..add(GCountryVars.serializer)
       ..add(GLanguageFilterInput.serializer)
       ..add(GStringQueryOperatorInput.serializer)
       ..add(G_Any.serializer)
@@ -24,8 +24,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GgetCountriesVars.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(GCountriesData_country_languages)]),
-          () => new ListBuilder<GCountriesData_country_languages>())
+              const [const FullType(GCountryData_country_languages)]),
+          () => new ListBuilder<GCountryData_country_languages>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GgetCountriesData_countries)]),

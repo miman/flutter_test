@@ -11,39 +11,38 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'country.req.gql.g.dart';
 
-abstract class GCountriesReq
+abstract class GCountryReq
     implements
-        Built<GCountriesReq, GCountriesReqBuilder>,
-        _i1.OperationRequest<_i2.GCountriesData, _i3.GCountriesVars> {
-  GCountriesReq._();
+        Built<GCountryReq, GCountryReqBuilder>,
+        _i1.OperationRequest<_i2.GCountryData, _i3.GCountryVars> {
+  GCountryReq._();
 
-  factory GCountriesReq([Function(GCountriesReqBuilder b) updates]) =
-      _$GCountriesReq;
+  factory GCountryReq([Function(GCountryReqBuilder b) updates]) = _$GCountryReq;
 
-  static void _initializeBuilder(GCountriesReqBuilder b) => b
+  static void _initializeBuilder(GCountryReqBuilder b) => b
     ..operation =
-        _i4.Operation(document: _i5.document, operationName: 'Countries')
+        _i4.Operation(document: _i5.document, operationName: 'Country')
     ..executeOnListen = true;
-  _i3.GCountriesVars get vars;
+  _i3.GCountryVars get vars;
   _i4.Operation get operation;
   _i4.Request get execRequest =>
       _i4.Request(operation: operation, variables: vars.toJson());
   String? get requestId;
   @BuiltValueField(serialize: false)
-  _i2.GCountriesData? Function(_i2.GCountriesData?, _i2.GCountriesData?)?
+  _i2.GCountryData? Function(_i2.GCountryData?, _i2.GCountryData?)?
       get updateResult;
-  _i2.GCountriesData? get optimisticResponse;
+  _i2.GCountryData? get optimisticResponse;
   String? get updateCacheHandlerKey;
   Map<String, dynamic>? get updateCacheHandlerContext;
   _i1.FetchPolicy? get fetchPolicy;
   bool get executeOnListen;
   @override
-  _i2.GCountriesData? parseData(Map<String, dynamic> json) =>
-      _i2.GCountriesData.fromJson(json);
-  static Serializer<GCountriesReq> get serializer => _$gCountriesReqSerializer;
+  _i2.GCountryData? parseData(Map<String, dynamic> json) =>
+      _i2.GCountryData.fromJson(json);
+  static Serializer<GCountryReq> get serializer => _$gCountryReqSerializer;
   Map<String, dynamic> toJson() =>
-      (_i6.serializers.serializeWith(GCountriesReq.serializer, this)
+      (_i6.serializers.serializeWith(GCountryReq.serializer, this)
           as Map<String, dynamic>);
-  static GCountriesReq? fromJson(Map<String, dynamic> json) =>
-      _i6.serializers.deserializeWith(GCountriesReq.serializer, json);
+  static GCountryReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(GCountryReq.serializer, json);
 }

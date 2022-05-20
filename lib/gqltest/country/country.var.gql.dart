@@ -6,19 +6,18 @@ import 'package:f_test/graphql/serializers.gql.dart' as _i1;
 
 part 'country.var.gql.g.dart';
 
-abstract class GCountriesVars
-    implements Built<GCountriesVars, GCountriesVarsBuilder> {
-  GCountriesVars._();
+abstract class GCountryVars
+    implements Built<GCountryVars, GCountryVarsBuilder> {
+  GCountryVars._();
 
-  factory GCountriesVars([Function(GCountriesVarsBuilder b) updates]) =
-      _$GCountriesVars;
+  factory GCountryVars([Function(GCountryVarsBuilder b) updates]) =
+      _$GCountryVars;
 
-  String? get code;
-  static Serializer<GCountriesVars> get serializer =>
-      _$gCountriesVarsSerializer;
+  String get code;
+  static Serializer<GCountryVars> get serializer => _$gCountryVarsSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GCountriesVars.serializer, this)
+      (_i1.serializers.serializeWith(GCountryVars.serializer, this)
           as Map<String, dynamic>);
-  static GCountriesVars? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GCountriesVars.serializer, json);
+  static GCountryVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(GCountryVars.serializer, json);
 }

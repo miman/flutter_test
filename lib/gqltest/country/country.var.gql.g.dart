@@ -6,36 +6,31 @@ part of 'country.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GCountriesVars> _$gCountriesVarsSerializer =
-    new _$GCountriesVarsSerializer();
+Serializer<GCountryVars> _$gCountryVarsSerializer =
+    new _$GCountryVarsSerializer();
 
-class _$GCountriesVarsSerializer
-    implements StructuredSerializer<GCountriesVars> {
+class _$GCountryVarsSerializer implements StructuredSerializer<GCountryVars> {
   @override
-  final Iterable<Type> types = const [GCountriesVars, _$GCountriesVars];
+  final Iterable<Type> types = const [GCountryVars, _$GCountryVars];
   @override
-  final String wireName = 'GCountriesVars';
+  final String wireName = 'GCountryVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GCountriesVars object,
+  Iterable<Object?> serialize(Serializers serializers, GCountryVars object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.code;
-    if (value != null) {
-      result
-        ..add('code')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
+    final result = <Object?>[
+      'code',
+      serializers.serialize(object.code, specifiedType: const FullType(String)),
+    ];
+
     return result;
   }
 
   @override
-  GCountriesVars deserialize(
+  GCountryVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesVarsBuilder();
+    final result = new GCountryVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -54,27 +49,28 @@ class _$GCountriesVarsSerializer
   }
 }
 
-class _$GCountriesVars extends GCountriesVars {
+class _$GCountryVars extends GCountryVars {
   @override
-  final String? code;
+  final String code;
 
-  factory _$GCountriesVars([void Function(GCountriesVarsBuilder)? updates]) =>
-      (new GCountriesVarsBuilder()..update(updates)).build();
+  factory _$GCountryVars([void Function(GCountryVarsBuilder)? updates]) =>
+      (new GCountryVarsBuilder()..update(updates)).build();
 
-  _$GCountriesVars._({this.code}) : super._();
+  _$GCountryVars._({required this.code}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(code, 'GCountryVars', 'code');
+  }
 
   @override
-  GCountriesVars rebuild(void Function(GCountriesVarsBuilder) updates) =>
+  GCountryVars rebuild(void Function(GCountryVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesVarsBuilder toBuilder() =>
-      new GCountriesVarsBuilder()..replace(this);
+  GCountryVarsBuilder toBuilder() => new GCountryVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GCountriesVars && code == other.code;
+    return other is GCountryVars && code == other.code;
   }
 
   @override
@@ -84,22 +80,22 @@ class _$GCountriesVars extends GCountriesVars {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesVars')..add('code', code))
+    return (newBuiltValueToStringHelper('GCountryVars')..add('code', code))
         .toString();
   }
 }
 
-class GCountriesVarsBuilder
-    implements Builder<GCountriesVars, GCountriesVarsBuilder> {
-  _$GCountriesVars? _$v;
+class GCountryVarsBuilder
+    implements Builder<GCountryVars, GCountryVarsBuilder> {
+  _$GCountryVars? _$v;
 
   String? _code;
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  GCountriesVarsBuilder();
+  GCountryVarsBuilder();
 
-  GCountriesVarsBuilder get _$this {
+  GCountryVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _code = $v.code;
@@ -109,19 +105,22 @@ class GCountriesVarsBuilder
   }
 
   @override
-  void replace(GCountriesVars other) {
+  void replace(GCountryVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesVars;
+    _$v = other as _$GCountryVars;
   }
 
   @override
-  void update(void Function(GCountriesVarsBuilder)? updates) {
+  void update(void Function(GCountryVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesVars build() {
-    final _$result = _$v ?? new _$GCountriesVars._(code: code);
+  _$GCountryVars build() {
+    final _$result = _$v ??
+        new _$GCountryVars._(
+            code: BuiltValueNullFieldError.checkNotNull(
+                code, 'GCountryVars', 'code'));
     replace(_$result);
     return _$result;
   }

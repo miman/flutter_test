@@ -2,14 +2,14 @@
 
 import 'package:gql/ast.dart' as _i1;
 
-const Countries = _i1.OperationDefinitionNode(
+const Country = _i1.OperationDefinitionNode(
     type: _i1.OperationType.query,
-    name: _i1.NameNode(value: 'Countries'),
+    name: _i1.NameNode(value: 'Country'),
     variableDefinitions: [
       _i1.VariableDefinitionNode(
           variable: _i1.VariableNode(name: _i1.NameNode(value: 'code')),
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: false),
+              name: _i1.NameNode(value: 'ID'), isNonNull: true),
           defaultValue: _i1.DefaultValueNode(value: null),
           directives: [])
     ],
@@ -95,4 +95,4 @@ const Countries = _i1.OperationDefinitionNode(
                 ]))
           ]))
     ]));
-const document = _i1.DocumentNode(definitions: [Countries]);
+const document = _i1.DocumentNode(definitions: [Country]);

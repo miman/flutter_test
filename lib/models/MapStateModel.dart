@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:f_test/gqltest/country/country.req.gql.dart';
 import 'package:flutter/foundation.dart';
 
 import '../gqltest/getCountries/getcountries.req.gql.dart';
@@ -30,6 +31,7 @@ class MapStateModel extends ChangeNotifier {
   }
 
   void loadMapItemsIfNeeded() {
+    loadCountry("GB");
     if (_mapItems.isEmpty) {
       loadCountries();
       int i = 1;
@@ -69,6 +71,14 @@ class MapStateModel extends ChangeNotifier {
         }
         notifyListeners();
       }
+    });
+  }
+
+  void loadCountry(String code) {
+    final countryReq = GCountryReq((b) => b..vars.code = code);
+    graphqlClient.request(countryReq).listen((resp) {
+      final result = resp.data?.country;
+      print(result);
     });
   }
 }

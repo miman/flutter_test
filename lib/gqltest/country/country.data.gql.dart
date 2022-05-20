@@ -7,105 +7,100 @@ import 'package:f_test/graphql/serializers.gql.dart' as _i1;
 
 part 'country.data.gql.g.dart';
 
-abstract class GCountriesData
-    implements Built<GCountriesData, GCountriesDataBuilder> {
-  GCountriesData._();
+abstract class GCountryData
+    implements Built<GCountryData, GCountryDataBuilder> {
+  GCountryData._();
 
-  factory GCountriesData([Function(GCountriesDataBuilder b) updates]) =
-      _$GCountriesData;
+  factory GCountryData([Function(GCountryDataBuilder b) updates]) =
+      _$GCountryData;
 
-  static void _initializeBuilder(GCountriesDataBuilder b) =>
+  static void _initializeBuilder(GCountryDataBuilder b) =>
       b..G__typename = 'Query';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  GCountriesData_country? get country;
-  static Serializer<GCountriesData> get serializer =>
-      _$gCountriesDataSerializer;
+  GCountryData_country? get country;
+  static Serializer<GCountryData> get serializer => _$gCountryDataSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GCountriesData.serializer, this)
+      (_i1.serializers.serializeWith(GCountryData.serializer, this)
           as Map<String, dynamic>);
-  static GCountriesData? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GCountriesData.serializer, json);
+  static GCountryData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(GCountryData.serializer, json);
 }
 
-abstract class GCountriesData_country
-    implements Built<GCountriesData_country, GCountriesData_countryBuilder> {
-  GCountriesData_country._();
+abstract class GCountryData_country
+    implements Built<GCountryData_country, GCountryData_countryBuilder> {
+  GCountryData_country._();
 
-  factory GCountriesData_country(
-          [Function(GCountriesData_countryBuilder b) updates]) =
-      _$GCountriesData_country;
+  factory GCountryData_country(
+          [Function(GCountryData_countryBuilder b) updates]) =
+      _$GCountryData_country;
 
-  static void _initializeBuilder(GCountriesData_countryBuilder b) =>
+  static void _initializeBuilder(GCountryData_countryBuilder b) =>
       b..G__typename = 'Country';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get name;
   String get native;
   String get phone;
-  GCountriesData_country_continent get continent;
+  GCountryData_country_continent get continent;
   String get emoji;
   String? get currency;
-  BuiltList<GCountriesData_country_languages> get languages;
-  static Serializer<GCountriesData_country> get serializer =>
-      _$gCountriesDataCountrySerializer;
+  BuiltList<GCountryData_country_languages> get languages;
+  static Serializer<GCountryData_country> get serializer =>
+      _$gCountryDataCountrySerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GCountriesData_country.serializer, this)
+      (_i1.serializers.serializeWith(GCountryData_country.serializer, this)
           as Map<String, dynamic>);
-  static GCountriesData_country? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GCountriesData_country.serializer, json);
+  static GCountryData_country? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(GCountryData_country.serializer, json);
 }
 
-abstract class GCountriesData_country_continent
+abstract class GCountryData_country_continent
     implements
-        Built<GCountriesData_country_continent,
-            GCountriesData_country_continentBuilder> {
-  GCountriesData_country_continent._();
+        Built<GCountryData_country_continent,
+            GCountryData_country_continentBuilder> {
+  GCountryData_country_continent._();
 
-  factory GCountriesData_country_continent(
-          [Function(GCountriesData_country_continentBuilder b) updates]) =
-      _$GCountriesData_country_continent;
+  factory GCountryData_country_continent(
+          [Function(GCountryData_country_continentBuilder b) updates]) =
+      _$GCountryData_country_continent;
 
-  static void _initializeBuilder(GCountriesData_country_continentBuilder b) =>
+  static void _initializeBuilder(GCountryData_country_continentBuilder b) =>
       b..G__typename = 'Continent';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get code;
   String get name;
-  static Serializer<GCountriesData_country_continent> get serializer =>
-      _$gCountriesDataCountryContinentSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers
-          .serializeWith(GCountriesData_country_continent.serializer, this)
-      as Map<String, dynamic>);
-  static GCountriesData_country_continent? fromJson(
-          Map<String, dynamic> json) =>
+  static Serializer<GCountryData_country_continent> get serializer =>
+      _$gCountryDataCountryContinentSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GCountryData_country_continent.serializer, this) as Map<String, dynamic>);
+  static GCountryData_country_continent? fromJson(Map<String, dynamic> json) =>
       _i1.serializers
-          .deserializeWith(GCountriesData_country_continent.serializer, json);
+          .deserializeWith(GCountryData_country_continent.serializer, json);
 }
 
-abstract class GCountriesData_country_languages
+abstract class GCountryData_country_languages
     implements
-        Built<GCountriesData_country_languages,
-            GCountriesData_country_languagesBuilder> {
-  GCountriesData_country_languages._();
+        Built<GCountryData_country_languages,
+            GCountryData_country_languagesBuilder> {
+  GCountryData_country_languages._();
 
-  factory GCountriesData_country_languages(
-          [Function(GCountriesData_country_languagesBuilder b) updates]) =
-      _$GCountriesData_country_languages;
+  factory GCountryData_country_languages(
+          [Function(GCountryData_country_languagesBuilder b) updates]) =
+      _$GCountryData_country_languages;
 
-  static void _initializeBuilder(GCountriesData_country_languagesBuilder b) =>
+  static void _initializeBuilder(GCountryData_country_languagesBuilder b) =>
       b..G__typename = 'Language';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get code;
   String? get name;
-  static Serializer<GCountriesData_country_languages> get serializer =>
-      _$gCountriesDataCountryLanguagesSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers
-          .serializeWith(GCountriesData_country_languages.serializer, this)
-      as Map<String, dynamic>);
-  static GCountriesData_country_languages? fromJson(
-          Map<String, dynamic> json) =>
+  static Serializer<GCountryData_country_languages> get serializer =>
+      _$gCountryDataCountryLanguagesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GCountryData_country_languages.serializer, this) as Map<String, dynamic>);
+  static GCountryData_country_languages? fromJson(Map<String, dynamic> json) =>
       _i1.serializers
-          .deserializeWith(GCountriesData_country_languages.serializer, json);
+          .deserializeWith(GCountryData_country_languages.serializer, json);
 }

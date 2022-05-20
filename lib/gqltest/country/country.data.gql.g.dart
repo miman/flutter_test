@@ -6,26 +6,25 @@ part of 'country.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GCountriesData> _$gCountriesDataSerializer =
-    new _$GCountriesDataSerializer();
-Serializer<GCountriesData_country> _$gCountriesDataCountrySerializer =
-    new _$GCountriesData_countrySerializer();
-Serializer<GCountriesData_country_continent>
-    _$gCountriesDataCountryContinentSerializer =
-    new _$GCountriesData_country_continentSerializer();
-Serializer<GCountriesData_country_languages>
-    _$gCountriesDataCountryLanguagesSerializer =
-    new _$GCountriesData_country_languagesSerializer();
+Serializer<GCountryData> _$gCountryDataSerializer =
+    new _$GCountryDataSerializer();
+Serializer<GCountryData_country> _$gCountryDataCountrySerializer =
+    new _$GCountryData_countrySerializer();
+Serializer<GCountryData_country_continent>
+    _$gCountryDataCountryContinentSerializer =
+    new _$GCountryData_country_continentSerializer();
+Serializer<GCountryData_country_languages>
+    _$gCountryDataCountryLanguagesSerializer =
+    new _$GCountryData_country_languagesSerializer();
 
-class _$GCountriesDataSerializer
-    implements StructuredSerializer<GCountriesData> {
+class _$GCountryDataSerializer implements StructuredSerializer<GCountryData> {
   @override
-  final Iterable<Type> types = const [GCountriesData, _$GCountriesData];
+  final Iterable<Type> types = const [GCountryData, _$GCountryData];
   @override
-  final String wireName = 'GCountriesData';
+  final String wireName = 'GCountryData';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GCountriesData object,
+  Iterable<Object?> serialize(Serializers serializers, GCountryData object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -38,16 +37,16 @@ class _$GCountriesDataSerializer
       result
         ..add('country')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GCountriesData_country)));
+            specifiedType: const FullType(GCountryData_country)));
     }
     return result;
   }
 
   @override
-  GCountriesData deserialize(
+  GCountryData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesDataBuilder();
+    final result = new GCountryDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -61,8 +60,8 @@ class _$GCountriesDataSerializer
           break;
         case 'country':
           result.country.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GCountriesData_country))!
-              as GCountriesData_country);
+                  specifiedType: const FullType(GCountryData_country))!
+              as GCountryData_country);
           break;
       }
     }
@@ -71,19 +70,19 @@ class _$GCountriesDataSerializer
   }
 }
 
-class _$GCountriesData_countrySerializer
-    implements StructuredSerializer<GCountriesData_country> {
+class _$GCountryData_countrySerializer
+    implements StructuredSerializer<GCountryData_country> {
   @override
   final Iterable<Type> types = const [
-    GCountriesData_country,
-    _$GCountriesData_country
+    GCountryData_country,
+    _$GCountryData_country
   ];
   @override
-  final String wireName = 'GCountriesData_country';
+  final String wireName = 'GCountryData_country';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GCountriesData_country object,
+      Serializers serializers, GCountryData_country object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -99,14 +98,14 @@ class _$GCountriesData_countrySerializer
           specifiedType: const FullType(String)),
       'continent',
       serializers.serialize(object.continent,
-          specifiedType: const FullType(GCountriesData_country_continent)),
+          specifiedType: const FullType(GCountryData_country_continent)),
       'emoji',
       serializers.serialize(object.emoji,
           specifiedType: const FullType(String)),
       'languages',
       serializers.serialize(object.languages,
           specifiedType: const FullType(BuiltList,
-              const [const FullType(GCountriesData_country_languages)])),
+              const [const FullType(GCountryData_country_languages)])),
     ];
     Object? value;
     value = object.currency;
@@ -120,10 +119,10 @@ class _$GCountriesData_countrySerializer
   }
 
   @override
-  GCountriesData_country deserialize(
+  GCountryData_country deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesData_countryBuilder();
+    final result = new GCountryData_countryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -150,8 +149,8 @@ class _$GCountriesData_countrySerializer
         case 'continent':
           result.continent.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(GCountriesData_country_continent))!
-              as GCountriesData_country_continent);
+                      const FullType(GCountryData_country_continent))!
+              as GCountryData_country_continent);
           break;
         case 'emoji':
           result.emoji = serializers.deserialize(value,
@@ -164,7 +163,7 @@ class _$GCountriesData_countrySerializer
         case 'languages':
           result.languages.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(GCountriesData_country_languages)
+                const FullType(GCountryData_country_languages)
               ]))! as BuiltList<Object>);
           break;
       }
@@ -174,19 +173,19 @@ class _$GCountriesData_countrySerializer
   }
 }
 
-class _$GCountriesData_country_continentSerializer
-    implements StructuredSerializer<GCountriesData_country_continent> {
+class _$GCountryData_country_continentSerializer
+    implements StructuredSerializer<GCountryData_country_continent> {
   @override
   final Iterable<Type> types = const [
-    GCountriesData_country_continent,
-    _$GCountriesData_country_continent
+    GCountryData_country_continent,
+    _$GCountryData_country_continent
   ];
   @override
-  final String wireName = 'GCountriesData_country_continent';
+  final String wireName = 'GCountryData_country_continent';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GCountriesData_country_continent object,
+      Serializers serializers, GCountryData_country_continent object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -202,10 +201,10 @@ class _$GCountriesData_country_continentSerializer
   }
 
   @override
-  GCountriesData_country_continent deserialize(
+  GCountryData_country_continent deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesData_country_continentBuilder();
+    final result = new GCountryData_country_continentBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -232,19 +231,19 @@ class _$GCountriesData_country_continentSerializer
   }
 }
 
-class _$GCountriesData_country_languagesSerializer
-    implements StructuredSerializer<GCountriesData_country_languages> {
+class _$GCountryData_country_languagesSerializer
+    implements StructuredSerializer<GCountryData_country_languages> {
   @override
   final Iterable<Type> types = const [
-    GCountriesData_country_languages,
-    _$GCountriesData_country_languages
+    GCountryData_country_languages,
+    _$GCountryData_country_languages
   ];
   @override
-  final String wireName = 'GCountriesData_country_languages';
+  final String wireName = 'GCountryData_country_languages';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GCountriesData_country_languages object,
+      Serializers serializers, GCountryData_country_languages object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -265,10 +264,10 @@ class _$GCountriesData_country_languagesSerializer
   }
 
   @override
-  GCountriesData_country_languages deserialize(
+  GCountryData_country_languages deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesData_country_languagesBuilder();
+    final result = new GCountryData_country_languagesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -295,32 +294,31 @@ class _$GCountriesData_country_languagesSerializer
   }
 }
 
-class _$GCountriesData extends GCountriesData {
+class _$GCountryData extends GCountryData {
   @override
   final String G__typename;
   @override
-  final GCountriesData_country? country;
+  final GCountryData_country? country;
 
-  factory _$GCountriesData([void Function(GCountriesDataBuilder)? updates]) =>
-      (new GCountriesDataBuilder()..update(updates)).build();
+  factory _$GCountryData([void Function(GCountryDataBuilder)? updates]) =>
+      (new GCountryDataBuilder()..update(updates)).build();
 
-  _$GCountriesData._({required this.G__typename, this.country}) : super._() {
+  _$GCountryData._({required this.G__typename, this.country}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, 'GCountriesData', 'G__typename');
+        G__typename, 'GCountryData', 'G__typename');
   }
 
   @override
-  GCountriesData rebuild(void Function(GCountriesDataBuilder) updates) =>
+  GCountryData rebuild(void Function(GCountryDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesDataBuilder toBuilder() =>
-      new GCountriesDataBuilder()..replace(this);
+  GCountryDataBuilder toBuilder() => new GCountryDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GCountriesData &&
+    return other is GCountryData &&
         G__typename == other.G__typename &&
         country == other.country;
   }
@@ -332,32 +330,32 @@ class _$GCountriesData extends GCountriesData {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesData')
+    return (newBuiltValueToStringHelper('GCountryData')
           ..add('G__typename', G__typename)
           ..add('country', country))
         .toString();
   }
 }
 
-class GCountriesDataBuilder
-    implements Builder<GCountriesData, GCountriesDataBuilder> {
-  _$GCountriesData? _$v;
+class GCountryDataBuilder
+    implements Builder<GCountryData, GCountryDataBuilder> {
+  _$GCountryData? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  GCountriesData_countryBuilder? _country;
-  GCountriesData_countryBuilder get country =>
-      _$this._country ??= new GCountriesData_countryBuilder();
-  set country(GCountriesData_countryBuilder? country) =>
+  GCountryData_countryBuilder? _country;
+  GCountryData_countryBuilder get country =>
+      _$this._country ??= new GCountryData_countryBuilder();
+  set country(GCountryData_countryBuilder? country) =>
       _$this._country = country;
 
-  GCountriesDataBuilder() {
-    GCountriesData._initializeBuilder(this);
+  GCountryDataBuilder() {
+    GCountryData._initializeBuilder(this);
   }
 
-  GCountriesDataBuilder get _$this {
+  GCountryDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -368,24 +366,24 @@ class GCountriesDataBuilder
   }
 
   @override
-  void replace(GCountriesData other) {
+  void replace(GCountryData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesData;
+    _$v = other as _$GCountryData;
   }
 
   @override
-  void update(void Function(GCountriesDataBuilder)? updates) {
+  void update(void Function(GCountryDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesData build() {
-    _$GCountriesData _$result;
+  _$GCountryData build() {
+    _$GCountryData _$result;
     try {
       _$result = _$v ??
-          new _$GCountriesData._(
+          new _$GCountryData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, 'GCountriesData', 'G__typename'),
+                  G__typename, 'GCountryData', 'G__typename'),
               country: _country?.build());
     } catch (_) {
       late String _$failedField;
@@ -394,7 +392,7 @@ class GCountriesDataBuilder
         _country?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GCountriesData', _$failedField, e.toString());
+            'GCountryData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -403,7 +401,7 @@ class GCountriesDataBuilder
   }
 }
 
-class _$GCountriesData_country extends GCountriesData_country {
+class _$GCountryData_country extends GCountryData_country {
   @override
   final String G__typename;
   @override
@@ -413,19 +411,19 @@ class _$GCountriesData_country extends GCountriesData_country {
   @override
   final String phone;
   @override
-  final GCountriesData_country_continent continent;
+  final GCountryData_country_continent continent;
   @override
   final String emoji;
   @override
   final String? currency;
   @override
-  final BuiltList<GCountriesData_country_languages> languages;
+  final BuiltList<GCountryData_country_languages> languages;
 
-  factory _$GCountriesData_country(
-          [void Function(GCountriesData_countryBuilder)? updates]) =>
-      (new GCountriesData_countryBuilder()..update(updates)).build();
+  factory _$GCountryData_country(
+          [void Function(GCountryData_countryBuilder)? updates]) =>
+      (new GCountryData_countryBuilder()..update(updates)).build();
 
-  _$GCountriesData_country._(
+  _$GCountryData_country._(
       {required this.G__typename,
       required this.name,
       required this.native,
@@ -436,34 +434,33 @@ class _$GCountriesData_country extends GCountriesData_country {
       required this.languages})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, 'GCountriesData_country', 'G__typename');
+        G__typename, 'GCountryData_country', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(name, 'GCountryData_country', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        name, 'GCountriesData_country', 'name');
+        native, 'GCountryData_country', 'native');
     BuiltValueNullFieldError.checkNotNull(
-        native, 'GCountriesData_country', 'native');
+        phone, 'GCountryData_country', 'phone');
     BuiltValueNullFieldError.checkNotNull(
-        phone, 'GCountriesData_country', 'phone');
+        continent, 'GCountryData_country', 'continent');
     BuiltValueNullFieldError.checkNotNull(
-        continent, 'GCountriesData_country', 'continent');
+        emoji, 'GCountryData_country', 'emoji');
     BuiltValueNullFieldError.checkNotNull(
-        emoji, 'GCountriesData_country', 'emoji');
-    BuiltValueNullFieldError.checkNotNull(
-        languages, 'GCountriesData_country', 'languages');
+        languages, 'GCountryData_country', 'languages');
   }
 
   @override
-  GCountriesData_country rebuild(
-          void Function(GCountriesData_countryBuilder) updates) =>
+  GCountryData_country rebuild(
+          void Function(GCountryData_countryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesData_countryBuilder toBuilder() =>
-      new GCountriesData_countryBuilder()..replace(this);
+  GCountryData_countryBuilder toBuilder() =>
+      new GCountryData_countryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GCountriesData_country &&
+    return other is GCountryData_country &&
         G__typename == other.G__typename &&
         name == other.name &&
         native == other.native &&
@@ -492,7 +489,7 @@ class _$GCountriesData_country extends GCountriesData_country {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesData_country')
+    return (newBuiltValueToStringHelper('GCountryData_country')
           ..add('G__typename', G__typename)
           ..add('name', name)
           ..add('native', native)
@@ -505,9 +502,9 @@ class _$GCountriesData_country extends GCountriesData_country {
   }
 }
 
-class GCountriesData_countryBuilder
-    implements Builder<GCountriesData_country, GCountriesData_countryBuilder> {
-  _$GCountriesData_country? _$v;
+class GCountryData_countryBuilder
+    implements Builder<GCountryData_country, GCountryData_countryBuilder> {
+  _$GCountryData_country? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -525,10 +522,10 @@ class GCountriesData_countryBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  GCountriesData_country_continentBuilder? _continent;
-  GCountriesData_country_continentBuilder get continent =>
-      _$this._continent ??= new GCountriesData_country_continentBuilder();
-  set continent(GCountriesData_country_continentBuilder? continent) =>
+  GCountryData_country_continentBuilder? _continent;
+  GCountryData_country_continentBuilder get continent =>
+      _$this._continent ??= new GCountryData_country_continentBuilder();
+  set continent(GCountryData_country_continentBuilder? continent) =>
       _$this._continent = continent;
 
   String? _emoji;
@@ -539,17 +536,17 @@ class GCountriesData_countryBuilder
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
-  ListBuilder<GCountriesData_country_languages>? _languages;
-  ListBuilder<GCountriesData_country_languages> get languages =>
-      _$this._languages ??= new ListBuilder<GCountriesData_country_languages>();
-  set languages(ListBuilder<GCountriesData_country_languages>? languages) =>
+  ListBuilder<GCountryData_country_languages>? _languages;
+  ListBuilder<GCountryData_country_languages> get languages =>
+      _$this._languages ??= new ListBuilder<GCountryData_country_languages>();
+  set languages(ListBuilder<GCountryData_country_languages>? languages) =>
       _$this._languages = languages;
 
-  GCountriesData_countryBuilder() {
-    GCountriesData_country._initializeBuilder(this);
+  GCountryData_countryBuilder() {
+    GCountryData_country._initializeBuilder(this);
   }
 
-  GCountriesData_countryBuilder get _$this {
+  GCountryData_countryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -566,33 +563,33 @@ class GCountriesData_countryBuilder
   }
 
   @override
-  void replace(GCountriesData_country other) {
+  void replace(GCountryData_country other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesData_country;
+    _$v = other as _$GCountryData_country;
   }
 
   @override
-  void update(void Function(GCountriesData_countryBuilder)? updates) {
+  void update(void Function(GCountryData_countryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesData_country build() {
-    _$GCountriesData_country _$result;
+  _$GCountryData_country build() {
+    _$GCountryData_country _$result;
     try {
       _$result = _$v ??
-          new _$GCountriesData_country._(
+          new _$GCountryData_country._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, 'GCountriesData_country', 'G__typename'),
+                  G__typename, 'GCountryData_country', 'G__typename'),
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'GCountriesData_country', 'name'),
+                  name, 'GCountryData_country', 'name'),
               native: BuiltValueNullFieldError.checkNotNull(
-                  native, 'GCountriesData_country', 'native'),
+                  native, 'GCountryData_country', 'native'),
               phone: BuiltValueNullFieldError.checkNotNull(
-                  phone, 'GCountriesData_country', 'phone'),
+                  phone, 'GCountryData_country', 'phone'),
               continent: continent.build(),
               emoji: BuiltValueNullFieldError.checkNotNull(
-                  emoji, 'GCountriesData_country', 'emoji'),
+                  emoji, 'GCountryData_country', 'emoji'),
               currency: currency,
               languages: languages.build());
     } catch (_) {
@@ -605,7 +602,7 @@ class GCountriesData_countryBuilder
         languages.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GCountriesData_country', _$failedField, e.toString());
+            'GCountryData_country', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -614,8 +611,7 @@ class GCountriesData_countryBuilder
   }
 }
 
-class _$GCountriesData_country_continent
-    extends GCountriesData_country_continent {
+class _$GCountryData_country_continent extends GCountryData_country_continent {
   @override
   final String G__typename;
   @override
@@ -623,34 +619,34 @@ class _$GCountriesData_country_continent
   @override
   final String name;
 
-  factory _$GCountriesData_country_continent(
-          [void Function(GCountriesData_country_continentBuilder)? updates]) =>
-      (new GCountriesData_country_continentBuilder()..update(updates)).build();
+  factory _$GCountryData_country_continent(
+          [void Function(GCountryData_country_continentBuilder)? updates]) =>
+      (new GCountryData_country_continentBuilder()..update(updates)).build();
 
-  _$GCountriesData_country_continent._(
+  _$GCountryData_country_continent._(
       {required this.G__typename, required this.code, required this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, 'GCountriesData_country_continent', 'G__typename');
+        G__typename, 'GCountryData_country_continent', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        code, 'GCountriesData_country_continent', 'code');
+        code, 'GCountryData_country_continent', 'code');
     BuiltValueNullFieldError.checkNotNull(
-        name, 'GCountriesData_country_continent', 'name');
+        name, 'GCountryData_country_continent', 'name');
   }
 
   @override
-  GCountriesData_country_continent rebuild(
-          void Function(GCountriesData_country_continentBuilder) updates) =>
+  GCountryData_country_continent rebuild(
+          void Function(GCountryData_country_continentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesData_country_continentBuilder toBuilder() =>
-      new GCountriesData_country_continentBuilder()..replace(this);
+  GCountryData_country_continentBuilder toBuilder() =>
+      new GCountryData_country_continentBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GCountriesData_country_continent &&
+    return other is GCountryData_country_continent &&
         G__typename == other.G__typename &&
         code == other.code &&
         name == other.name;
@@ -664,7 +660,7 @@ class _$GCountriesData_country_continent
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesData_country_continent')
+    return (newBuiltValueToStringHelper('GCountryData_country_continent')
           ..add('G__typename', G__typename)
           ..add('code', code)
           ..add('name', name))
@@ -672,11 +668,11 @@ class _$GCountriesData_country_continent
   }
 }
 
-class GCountriesData_country_continentBuilder
+class GCountryData_country_continentBuilder
     implements
-        Builder<GCountriesData_country_continent,
-            GCountriesData_country_continentBuilder> {
-  _$GCountriesData_country_continent? _$v;
+        Builder<GCountryData_country_continent,
+            GCountryData_country_continentBuilder> {
+  _$GCountryData_country_continent? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -690,11 +686,11 @@ class GCountriesData_country_continentBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  GCountriesData_country_continentBuilder() {
-    GCountriesData_country_continent._initializeBuilder(this);
+  GCountryData_country_continentBuilder() {
+    GCountryData_country_continent._initializeBuilder(this);
   }
 
-  GCountriesData_country_continentBuilder get _$this {
+  GCountryData_country_continentBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -706,33 +702,32 @@ class GCountriesData_country_continentBuilder
   }
 
   @override
-  void replace(GCountriesData_country_continent other) {
+  void replace(GCountryData_country_continent other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesData_country_continent;
+    _$v = other as _$GCountryData_country_continent;
   }
 
   @override
-  void update(void Function(GCountriesData_country_continentBuilder)? updates) {
+  void update(void Function(GCountryData_country_continentBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesData_country_continent build() {
+  _$GCountryData_country_continent build() {
     final _$result = _$v ??
-        new _$GCountriesData_country_continent._(
+        new _$GCountryData_country_continent._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, 'GCountriesData_country_continent', 'G__typename'),
+                G__typename, 'GCountryData_country_continent', 'G__typename'),
             code: BuiltValueNullFieldError.checkNotNull(
-                code, 'GCountriesData_country_continent', 'code'),
+                code, 'GCountryData_country_continent', 'code'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'GCountriesData_country_continent', 'name'));
+                name, 'GCountryData_country_continent', 'name'));
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GCountriesData_country_languages
-    extends GCountriesData_country_languages {
+class _$GCountryData_country_languages extends GCountryData_country_languages {
   @override
   final String G__typename;
   @override
@@ -740,32 +735,32 @@ class _$GCountriesData_country_languages
   @override
   final String? name;
 
-  factory _$GCountriesData_country_languages(
-          [void Function(GCountriesData_country_languagesBuilder)? updates]) =>
-      (new GCountriesData_country_languagesBuilder()..update(updates)).build();
+  factory _$GCountryData_country_languages(
+          [void Function(GCountryData_country_languagesBuilder)? updates]) =>
+      (new GCountryData_country_languagesBuilder()..update(updates)).build();
 
-  _$GCountriesData_country_languages._(
+  _$GCountryData_country_languages._(
       {required this.G__typename, required this.code, this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, 'GCountriesData_country_languages', 'G__typename');
+        G__typename, 'GCountryData_country_languages', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        code, 'GCountriesData_country_languages', 'code');
+        code, 'GCountryData_country_languages', 'code');
   }
 
   @override
-  GCountriesData_country_languages rebuild(
-          void Function(GCountriesData_country_languagesBuilder) updates) =>
+  GCountryData_country_languages rebuild(
+          void Function(GCountryData_country_languagesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesData_country_languagesBuilder toBuilder() =>
-      new GCountriesData_country_languagesBuilder()..replace(this);
+  GCountryData_country_languagesBuilder toBuilder() =>
+      new GCountryData_country_languagesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GCountriesData_country_languages &&
+    return other is GCountryData_country_languages &&
         G__typename == other.G__typename &&
         code == other.code &&
         name == other.name;
@@ -779,7 +774,7 @@ class _$GCountriesData_country_languages
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesData_country_languages')
+    return (newBuiltValueToStringHelper('GCountryData_country_languages')
           ..add('G__typename', G__typename)
           ..add('code', code)
           ..add('name', name))
@@ -787,11 +782,11 @@ class _$GCountriesData_country_languages
   }
 }
 
-class GCountriesData_country_languagesBuilder
+class GCountryData_country_languagesBuilder
     implements
-        Builder<GCountriesData_country_languages,
-            GCountriesData_country_languagesBuilder> {
-  _$GCountriesData_country_languages? _$v;
+        Builder<GCountryData_country_languages,
+            GCountryData_country_languagesBuilder> {
+  _$GCountryData_country_languages? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -805,11 +800,11 @@ class GCountriesData_country_languagesBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  GCountriesData_country_languagesBuilder() {
-    GCountriesData_country_languages._initializeBuilder(this);
+  GCountryData_country_languagesBuilder() {
+    GCountryData_country_languages._initializeBuilder(this);
   }
 
-  GCountriesData_country_languagesBuilder get _$this {
+  GCountryData_country_languagesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -821,24 +816,24 @@ class GCountriesData_country_languagesBuilder
   }
 
   @override
-  void replace(GCountriesData_country_languages other) {
+  void replace(GCountryData_country_languages other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesData_country_languages;
+    _$v = other as _$GCountryData_country_languages;
   }
 
   @override
-  void update(void Function(GCountriesData_country_languagesBuilder)? updates) {
+  void update(void Function(GCountryData_country_languagesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesData_country_languages build() {
+  _$GCountryData_country_languages build() {
     final _$result = _$v ??
-        new _$GCountriesData_country_languages._(
+        new _$GCountryData_country_languages._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, 'GCountriesData_country_languages', 'G__typename'),
+                G__typename, 'GCountryData_country_languages', 'G__typename'),
             code: BuiltValueNullFieldError.checkNotNull(
-                code, 'GCountriesData_country_languages', 'code'),
+                code, 'GCountryData_country_languages', 'code'),
             name: name);
     replace(_$result);
     return _$result;

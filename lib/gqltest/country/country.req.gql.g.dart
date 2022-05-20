@@ -6,22 +6,21 @@ part of 'country.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GCountriesReq> _$gCountriesReqSerializer =
-    new _$GCountriesReqSerializer();
+Serializer<GCountryReq> _$gCountryReqSerializer = new _$GCountryReqSerializer();
 
-class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
+class _$GCountryReqSerializer implements StructuredSerializer<GCountryReq> {
   @override
-  final Iterable<Type> types = const [GCountriesReq, _$GCountriesReq];
+  final Iterable<Type> types = const [GCountryReq, _$GCountryReq];
   @override
-  final String wireName = 'GCountriesReq';
+  final String wireName = 'GCountryReq';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GCountriesReq object,
+  Iterable<Object?> serialize(Serializers serializers, GCountryReq object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'vars',
       serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GCountriesVars)),
+          specifiedType: const FullType(_i3.GCountryVars)),
       'operation',
       serializers.serialize(object.operation,
           specifiedType: const FullType(_i4.Operation)),
@@ -42,7 +41,7 @@ class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
       result
         ..add('optimisticResponse')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GCountriesData)));
+            specifiedType: const FullType(_i2.GCountryData)));
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
@@ -70,10 +69,9 @@ class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
   }
 
   @override
-  GCountriesReq deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+  GCountryReq deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCountriesReqBuilder();
+    final result = new GCountryReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -83,8 +81,8 @@ class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
       switch (key) {
         case 'vars':
           result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GCountriesVars))!
-              as _i3.GCountriesVars);
+                  specifiedType: const FullType(_i3.GCountryVars))!
+              as _i3.GCountryVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -96,8 +94,8 @@ class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
           break;
         case 'optimisticResponse':
           result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GCountriesData))!
-              as _i2.GCountriesData);
+                  specifiedType: const FullType(_i2.GCountryData))!
+              as _i2.GCountryData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -126,18 +124,18 @@ class _$GCountriesReqSerializer implements StructuredSerializer<GCountriesReq> {
   }
 }
 
-class _$GCountriesReq extends GCountriesReq {
+class _$GCountryReq extends GCountryReq {
   @override
-  final _i3.GCountriesVars vars;
+  final _i3.GCountryVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GCountriesData? Function(_i2.GCountriesData?, _i2.GCountriesData?)?
+  final _i2.GCountryData? Function(_i2.GCountryData?, _i2.GCountryData?)?
       updateResult;
   @override
-  final _i2.GCountriesData? optimisticResponse;
+  final _i2.GCountryData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -147,10 +145,10 @@ class _$GCountriesReq extends GCountriesReq {
   @override
   final bool executeOnListen;
 
-  factory _$GCountriesReq([void Function(GCountriesReqBuilder)? updates]) =>
-      (new GCountriesReqBuilder()..update(updates)).build();
+  factory _$GCountryReq([void Function(GCountryReqBuilder)? updates]) =>
+      (new GCountryReqBuilder()..update(updates)).build();
 
-  _$GCountriesReq._(
+  _$GCountryReq._(
       {required this.vars,
       required this.operation,
       this.requestId,
@@ -161,25 +159,25 @@ class _$GCountriesReq extends GCountriesReq {
       this.fetchPolicy,
       required this.executeOnListen})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, 'GCountriesReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(vars, 'GCountryReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
-        operation, 'GCountriesReq', 'operation');
+        operation, 'GCountryReq', 'operation');
     BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, 'GCountriesReq', 'executeOnListen');
+        executeOnListen, 'GCountryReq', 'executeOnListen');
   }
 
   @override
-  GCountriesReq rebuild(void Function(GCountriesReqBuilder) updates) =>
+  GCountryReq rebuild(void Function(GCountryReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCountriesReqBuilder toBuilder() => new GCountriesReqBuilder()..replace(this);
+  GCountryReqBuilder toBuilder() => new GCountryReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GCountriesReq &&
+    return other is GCountryReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -211,7 +209,7 @@ class _$GCountriesReq extends GCountriesReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GCountriesReq')
+    return (newBuiltValueToStringHelper('GCountryReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -225,14 +223,13 @@ class _$GCountriesReq extends GCountriesReq {
   }
 }
 
-class GCountriesReqBuilder
-    implements Builder<GCountriesReq, GCountriesReqBuilder> {
-  _$GCountriesReq? _$v;
+class GCountryReqBuilder implements Builder<GCountryReq, GCountryReqBuilder> {
+  _$GCountryReq? _$v;
 
-  _i3.GCountriesVarsBuilder? _vars;
-  _i3.GCountriesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCountriesVarsBuilder();
-  set vars(_i3.GCountriesVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GCountryVarsBuilder? _vars;
+  _i3.GCountryVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GCountryVarsBuilder();
+  set vars(_i3.GCountryVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -242,20 +239,19 @@ class GCountriesReqBuilder
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GCountriesData? Function(_i2.GCountriesData?, _i2.GCountriesData?)?
+  _i2.GCountryData? Function(_i2.GCountryData?, _i2.GCountryData?)?
       _updateResult;
-  _i2.GCountriesData? Function(_i2.GCountriesData?, _i2.GCountriesData?)?
+  _i2.GCountryData? Function(_i2.GCountryData?, _i2.GCountryData?)?
       get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GCountriesData? Function(
-                  _i2.GCountriesData?, _i2.GCountriesData?)?
+          _i2.GCountryData? Function(_i2.GCountryData?, _i2.GCountryData?)?
               updateResult) =>
       _$this._updateResult = updateResult;
 
-  _i2.GCountriesDataBuilder? _optimisticResponse;
-  _i2.GCountriesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCountriesDataBuilder();
-  set optimisticResponse(_i2.GCountriesDataBuilder? optimisticResponse) =>
+  _i2.GCountryDataBuilder? _optimisticResponse;
+  _i2.GCountryDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GCountryDataBuilder();
+  set optimisticResponse(_i2.GCountryDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -280,11 +276,11 @@ class GCountriesReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
-  GCountriesReqBuilder() {
-    GCountriesReq._initializeBuilder(this);
+  GCountryReqBuilder() {
+    GCountryReq._initializeBuilder(this);
   }
 
-  GCountriesReqBuilder get _$this {
+  GCountryReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -302,25 +298,25 @@ class GCountriesReqBuilder
   }
 
   @override
-  void replace(GCountriesReq other) {
+  void replace(GCountryReq other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GCountriesReq;
+    _$v = other as _$GCountryReq;
   }
 
   @override
-  void update(void Function(GCountriesReqBuilder)? updates) {
+  void update(void Function(GCountryReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GCountriesReq build() {
-    _$GCountriesReq _$result;
+  _$GCountryReq build() {
+    _$GCountryReq _$result;
     try {
       _$result = _$v ??
-          new _$GCountriesReq._(
+          new _$GCountryReq._(
               vars: vars.build(),
               operation: BuiltValueNullFieldError.checkNotNull(
-                  operation, 'GCountriesReq', 'operation'),
+                  operation, 'GCountryReq', 'operation'),
               requestId: requestId,
               updateResult: updateResult,
               optimisticResponse: _optimisticResponse?.build(),
@@ -328,7 +324,7 @@ class GCountriesReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, 'GCountriesReq', 'executeOnListen'));
+                  executeOnListen, 'GCountryReq', 'executeOnListen'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -339,7 +335,7 @@ class GCountriesReqBuilder
         _optimisticResponse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GCountriesReq', _$failedField, e.toString());
+            'GCountryReq', _$failedField, e.toString());
       }
       rethrow;
     }
