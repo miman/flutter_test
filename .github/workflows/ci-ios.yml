@@ -31,9 +31,9 @@ jobs:
 #        cd ..
 #        zip -r app.ipa Payload
 
-#      - name: Push to iOS release
-#        uses: ncipollo/release-action@v1.10.0
-#        with: 
-#          artifacts: "build/ios/iphoneos/app.ipa"
-#          tag: v1.0.${{github.run_number}} - iOS 
-#          tokeN: ${{ secrets.REPO_TOKEN }}
+      - name: Push to iOS release
+        uses: ncipollo/release-action@v1.10.0
+        with: 
+          artifacts: "build/ios/iphoneos/app.ipa"
+          tag: v1.0.${{github.run_number}}_ios
+          tokeN: ${{ secrets.REPO_TOKEN }}

@@ -31,10 +31,10 @@ jobs:
       - run: flutter build apk --split-per-abi
       - run: flutter build appbundle
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: release-apk
-          path: build/app/outputs/apk/release/app-release.apk
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: release-apk
+#          path: build/app/outputs/apk/release/app-release.apk
 
       - name: Push to Android release
         uses: ncipollo/release-action@v1.10.0
