@@ -1,0 +1,39 @@
+# CI config for flutter.
+# https://github.com/subosito/flutter-action
+# Netlify - https://github.com/marketplace/actions/netlify-actions
+
+name: CI - iOS
+
+on:
+  workflow_dispatch:    
+#  push:
+#    branches: [ main ]
+
+jobs:
+  ios:
+    name: build & test the Flutter iOS version
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2.0.4
+        with:
+          channel: "stable"
+          flutter-version: "3.0.0"
+          architecture: x64
+      - run: flutter pub get
+      # - run: flutter test
+      - run: flutter build ios --release --no-codesign
+#        cd build/ios/iphoneos
+#        mkdir Payload
+#        cd Payload
+#        ln -s ../Runner.app
+#        cd ..
+#        zip -r app.ipa Payload
+
+#      - name: Push to iOS release
+#        uses: ncipollo/release-action@v1.10.0
+#        with: 
+#          artifacts: "build/ios/iphoneos/app.ipa"
+#          tag: v1.0.${{github.run_number}} - iOS 
+#          tokeN: ${{ secrets.REPO_TOKEN }}

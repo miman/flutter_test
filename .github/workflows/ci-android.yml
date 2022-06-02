@@ -1,0 +1,44 @@
+# CI config for flutter.
+# https://github.com/subosito/flutter-action
+# Netlify - https://github.com/marketplace/actions/netlify-actions
+
+name: CI
+
+on:
+  workflow_dispatch:    
+#  push:
+#    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
+
+jobs:
+  android:
+    name: build & test the Flutter Android version
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - uses: subosito/flutter-action@v2.0.4
+        with:
+          channel: "stable"
+          flutter-version: "3.0.0"
+      - run: flutter pub get
+      # - run: flutter test
+      - run: flutter build apk
+      - run: flutter build appbundle
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: build/app/outputs/apk/release/app-release.apk
+
+      - name: Push to Android release
+        uses: ncipollo/release-action@v1.10.0
+        with: 
+          artifacts: "build/app/outputs/apk/debug/*"
+          tag: v1.0.${{github.run_number}}_android
+          tokeN: ${{ secrets.REPO_TOKEN }}
