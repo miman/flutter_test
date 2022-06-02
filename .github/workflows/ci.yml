@@ -2,7 +2,7 @@
 # https://github.com/subosito/flutter-action
 # Netlify - https://github.com/marketplace/actions/netlify-actions
 
-name: CI
+name: CI-Web
 
 on:
   workflow_dispatch:    
